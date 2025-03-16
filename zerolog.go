@@ -10,7 +10,7 @@ import (
 
 // Zerolog -.
 type Zerolog struct {
-	Logger
+	goLogger
 	logger zerolog.Logger
 	level  zerolog.Level
 }

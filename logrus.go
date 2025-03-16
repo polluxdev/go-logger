@@ -13,7 +13,7 @@ import (
 
 // Logrus -.
 type Logrus struct {
-	Logger
+	goLogger
 	logger *logrus.Logger
 	level  logrus.Level
 }

@@ -10,7 +10,7 @@ import (
 
 // Zap -.
 type Zap struct {
-	Logger
+	goLogger
 	logger *zap.Logger
 	level  zapcore.Level
 }

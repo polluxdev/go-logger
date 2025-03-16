@@ -11,7 +11,7 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
-const IMPLEMENT_ME = "implement me!"
+const _implement_me = "implement me!"
 
 // Interface -.
 type Interface interface {
@@ -22,28 +22,28 @@ type Interface interface {
 	Fatal(message interface{}, fields ...interface{})
 }
 
-// Logger -.
-type Logger struct {
+// goLogger -.
+type goLogger struct {
 	mu       sync.Mutex
 	logFile  *lumberjack.Logger
 	filePath string
 }
 
 // initLogger
-func (l *Logger) initLogger(level string) {
+func (l *goLogger) initLogger(level string) {
 	// Set log level
 	l.setLogLevel(level)
 
-	panic(IMPLEMENT_ME)
+	panic(_implement_me)
 }
 
 // setLogLevel -.
-func (l *Logger) setLogLevel(level string) {
-	panic(IMPLEMENT_ME)
+func (l *goLogger) setLogLevel(level string) {
+	panic(_implement_me)
 }
 
 // initRotate -.
-func (l *Logger) initRotate() {
+func (l *goLogger) initRotate() {
 	l.mu.Lock()
 	defer l.mu.Unlock()
 
@@ -72,7 +72,7 @@ func (l *Logger) initRotate() {
 }
 
 // compressLogFile -.
-func (l *Logger) compressLogFile() error {
+func (l *goLogger) compressLogFile() error {
 	l.mu.Lock()
 	defer l.mu.Unlock()
 
@@ -104,7 +104,7 @@ func (l *Logger) compressLogFile() error {
 }
 
 // autoRotateLogs -.
-func (l *Logger) autoRotateLogs(level string) {
+func (l *goLogger) autoRotateLogs(level string) {
 	for {
 		// Get the current time
 		now := time.Now()
