@@ -1,4 +1,4 @@
-package gologger
+package logify
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 
 // Zap -.
 type Zap struct {
-	goLogger
+	loggerCore
 	logger *zap.Logger
 	level  zapcore.Level
 }

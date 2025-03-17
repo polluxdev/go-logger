@@ -1,4 +1,4 @@
-package gologger
+package logify
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 
 // Zerolog -.
 type Zerolog struct {
-	goLogger
+	loggerCore
 	logger zerolog.Logger
 	level  zerolog.Level
 }

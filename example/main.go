@@ -1,9 +1,9 @@
 package main
 
-import gologger "github.com/polluxdev/go-logger"
+import "github.com/polluxdev/go-logify"
 
 func main() {
-	zerolog := gologger.NewZerolog("debug")
+	zerolog := logify.NewZerolog("debug")
 	zerolog.Debug("This is a debug message")
 	zerolog.Error("This is a error message")
 	zerolog.Info("This is a info message")

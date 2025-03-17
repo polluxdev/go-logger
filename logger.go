@@ -1,4 +1,4 @@
-package gologger
+package logify
 
 import (
 	"compress/gzip"
@@ -22,15 +22,15 @@ type Interface interface {
 	Fatal(message interface{}, fields ...interface{})
 }
 
-// goLogger -.
-type goLogger struct {
+// loggerCore -.
+type loggerCore struct {
 	mu       sync.Mutex
 	logFile  *lumberjack.Logger
 	filePath string
 }
 
 // initLogger
-func (l *goLogger) initLogger(level string) {
+func (l *loggerCore) initLogger(level string) {
 	// Set log level
 	l.setLogLevel(level)
 
@@ -38,12 +38,12 @@ func (l *goLogger) initLogger(level string) {
 }
 
 // setLogLevel -.
-func (l *goLogger) setLogLevel(level string) {
+func (l *loggerCore) setLogLevel(level string) {
 	panic(_implement_me)
 }
 
 // initRotate -.
-func (l *goLogger) initRotate() {
+func (l *loggerCore) initRotate() {
 	l.mu.Lock()
 	defer l.mu.Unlock()
 
@@ -72,7 +72,7 @@ func (l *goLogger) initRotate() {
 }
 
 // compressLogFile -.
-func (l *goLogger) compressLogFile() error {
+func (l *loggerCore) compressLogFile() error {
 	l.mu.Lock()
 	defer l.mu.Unlock()
 
@@ -104,7 +104,7 @@ func (l *goLogger) compressLogFile() error {
 }
 
 // autoRotateLogs -.
-func (l *goLogger) autoRotateLogs(level string) {
+func (l *loggerCore) autoRotateLogs(level string) {
 	for {
 		// Get the current time
 		now := time.Now()

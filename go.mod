@@ -1,4 +1,4 @@
-module github.com/polluxdev/go-logger
+module github.com/polluxdev/go-logify
 
 go 1.24.0
 

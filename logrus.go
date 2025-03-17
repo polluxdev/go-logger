@@ -1,4 +1,4 @@
-package gologger
+package logify
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ import (
 
 // Logrus -.
 type Logrus struct {
-	goLogger
+	loggerCore
 	logger *logrus.Logger
 	level  logrus.Level
 }
