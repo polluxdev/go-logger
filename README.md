@@ -1,8 +1,8 @@
-# go-logger
+# go-logify
 
-# go-logger - Logger Toolkit for Go
+# go-logify - Logger Toolkit for Go
 
-`go-logger` is a modular logger package for Go, supporting logrus, zerolog, and zap logger. It provides an easy and structured way to manage logger mechanism in your Go projects.
+`go-logify` is a modular logger package for Go, supporting logrus, zerolog, and zap logger. It provides an easy and structured way to manage logger mechanism in your Go projects.
 
 ## Features
 - 🔌 **Modular:** Separate packages for each logger.
@@ -11,4 +11,4 @@
 
 ## Installation
 ```sh
-go get github.com/polluxdev/go-logger
+go get github.com/polluxdev/go-logify
